@@ -10,8 +10,8 @@ router.get("/", async (req, res) => {
   try {
     await connectToDatabase();
     
-    const siteTitleDoc = await Meta.findOne({ key: "_siteTitle" });
-    const siteBlocksDoc = await Meta.findOne({ key: "_siteBlocks" });
+    const siteTitleDoc = await Meta.findOne({ key: "siteTitle" });
+    const siteBlocksDoc = await Meta.findOne({ key: "siteBlocks" });
     
     const _siteTitle = siteTitleDoc?.value || "Documentation";
     const _siteBlocks = siteBlocksDoc?.value || [];
